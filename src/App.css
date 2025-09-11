@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+body {
+  background-color: #f0f8ff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Center vertically */
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Calculator Box */
+.calculator-container {
+  width: 95%;
+  max-width: 380px; /* Bigger max size */
+  padding: 20px;
+  border-radius: 20px;
+  background: #b8ecf6;
+  box-shadow: 8px 8px 16px #aaa;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Solar Strip */
+.solar-strip {
+  background: repeating-linear-gradient(
+    90deg,
+    #444 0px,
+    #444 25px,
+    #222 25px,
+    #222 50px
+  );
+  height: 35px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Display */
+.display {
+  width: 100%;
+  height: 65px;
+  font-size: 2rem;
+  text-align: right;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: none;
+  background: #e0f7fa;
+  box-shadow: inset 2px 2px 6px #bbb;
+  box-sizing: border-box;
+}
+
+/* Keypad */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.keypad button {
+  height: 65px;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  background: #f7e2a9;
+  color: #333;
+  box-shadow: 2px 2px 5px #999;
+  transition: all 0.2s;
+}
+
+.keypad button:hover {
+  background: #ffe793;
+}
+
+.keypad button.equals {
+  background: #f7a9a9;
+}
+
+.keypad button.equals:hover {
+  background: #ff7f7f;
+}
+
+/* Responsive tweaks */
+@media (max-width: 450px) {
+  .calculator-container {
+    max-width: 95%;
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .display {
+    font-size: 1.6rem;
+    height: 55px;
+  }
+
+  .keypad button {
+    height: 55px;
+    font-size: 1.2rem;
   }
 }
